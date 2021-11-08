@@ -9,40 +9,51 @@
 <body>
     <script>
         'use strict'
-//Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами. Т.е. например, функция для сложения должна принимать два числа, складывать их и возвращать результат.
-// Обязательно использовать оператор return.
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78,
+            },
+        ];
 
-        function addition (a, b) {
-            let c = a + b;
-            return (c);
-        }
+        // 1 Получить все товары, у которых есть фотографии
+        let havePhotos = products.filter(function(havePhotos){
+            if (havePhotos.photos !== undefined && havePhotos.photos.length >= 1) {
+                return havePhotos.photos;
+            }
+        });
+        console.log(havePhotos)
 
-        function subtraction (a, b) {
-            let c = a - b;
-            return (c);
-        }
-
-        function multiplication (a, b) {
-            let c = a * b;
-            return (c);
-        }
-
-        function division (a, b) {
-            let c = a / b;
-            return (c);
-        }
-
-        let res1 = addition (10, 5);
-        console.log(res1);
-
-        let res2 = subtraction (10, 5);
-        console.log(res2);
-
-        let res3 = multiplication (10, 5);
-        console.log(res3);
-
-        let res4 = division (10, 5);
-        console.log(res4);
+        // 2 Отсортируйте товары по цене (от низкой цены к высокой)
+        products.sort(function (a, b){
+            if (a.price > b.price){
+                return 1;    
+            }
+            if (a.price < b.price){
+                return -1;    
+            }
+        });
+        console.log(products);
     </script>
 </body>
 </html>

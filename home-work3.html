@@ -9,21 +9,24 @@
 <body>
     <script>
         'use strict'
-        let a = 7;
-        let b = 5;
-        let c;
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
 
-        if (a >= 0 && b >= 0) {
-            c = a - b; 
-        } else if (a < 0 && b < 0) {
-            c = a * b; 
-        } else if (a < 0 && b >= 0) {
-            c = a + b;
-        } else if (a >= 0 && b < 0) {
-            c = a + b;
-        }
-
-        console.log (c);
+        products.forEach(function(element) {
+            console.log(element.price - element.price * 0.15);
+            });
     </script>
 </body>
 </html>
